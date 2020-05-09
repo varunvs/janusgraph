@@ -244,6 +244,7 @@ public class CQLStoreManager extends DistributedStoreManager implements KeyColum
 
         final Builder builder = Cluster.builder()
                 .addContactPointsWithPorts(contactPoints)
+                .withPort(this.port)
                 .withClusterName(configuration.get(CLUSTER_NAME));
 
         if (configuration.get(PROTOCOL_VERSION) != 0) {
